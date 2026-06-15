@@ -1,0 +1,65 @@
+<div class="container py-5" id="seccion-agendar">
+  <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 650px;">
+    
+    <!-- Encabezado de la Tarjeta -->
+    <div class="card-header text-white text-center py-4 rounded-top-4" style="background-color: #19a5b5;">
+      <h3 class="mb-0 fw-bold">Agendar Cita Médica</h3>
+      <p class="mb-0 text-white-50">Completa tus datos y nos pondremos en contacto</p>
+    </div>
+
+    <!-- Cuerpo del Formulario -->
+    <div class="card-body p-4 p-md-5">
+      
+      <!-- Vinculamos el HTML con nuestro FormGroup de TypeScript -->
+      <form [formGroup]="formularioCita" (ngSubmit)="agendar()">
+        
+        <!-- Nombre Completo -->
+        <div class="mb-4">
+          <label class="form-label fw-bold text-secondary">Nombre del Paciente</label>
+          <input type="text" class="form-control form-control-lg bg-light" formControlName="nombrePaciente" placeholder="Ej. Juan Pérez">
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="mb-4">
+          <label class="form-label fw-bold text-secondary">Correo Electrónico</label>
+          <input type="email" class="form-control form-control-lg bg-light" formControlName="correo" placeholder="tu@correo.com">
+        </div>
+
+        <!-- Fila dividida en dos columnas para Tipo y Fecha -->
+        <div class="row mb-4">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <label class="form-label fw-bold text-secondary">Tipo de Consulta</label>
+            <select class="form-select form-select-lg bg-light" formControlName="tipoCita">
+              <option value="" disabled selected>Selecciona una opción...</option>
+              <option value="primera_vez">Primera vez</option>
+              <option value="chequeo">Chequeo de rutina</option>
+              <option value="resultados">Revisión de exámenes</option>
+            </select>
+          </div>
+          
+          <div class="col-md-6">
+            <label class="form-label fw-bold text-secondary">Fecha Preferida</label>
+            <input type="date" class="form-control form-control-lg bg-light" formControlName="fecha">
+          </div>
+        </div>
+
+        <!-- Síntomas -->
+        <div class="mb-5">
+          <label class="form-label fw-bold text-secondary">Motivo de la consulta (Opcional)</label>
+          <textarea class="form-control bg-light" formControlName="sintomas" rows="3" placeholder="Describe brevemente tus síntomas o el motivo de tu visita..."></textarea>
+        </div>
+
+        <!-- Botón de Envío: Se deshabilita mágicamente si el formulario es inválido -->
+        <button 
+          type="submit" 
+          class="btn btn-lg w-100 text-white shadow-sm" 
+          style="background-color: #4b1a85; font-weight: 600;" 
+          [disabled]="formularioCita.invalid">
+          Confirmar Solicitud
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

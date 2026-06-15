@@ -1,0 +1,47 @@
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold" style="color: #2c3e50;">Encuentra a tu Especialista</h2>
+    <p class="text-muted">Busca por nombre o tratamiento médico</p>
+  </div>
+
+  <!-- Barra de Búsqueda -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-8 col-lg-6">
+      <input 
+        type="text" 
+        class="form-control form-control-lg shadow-sm" 
+        placeholder="Ej. Hemodinamia, Arritmias, Dr. Paulina..."
+        [(ngModel)]="terminoBusqueda"
+      >
+    </div>
+  </div>
+
+  <!-- Resultados (Tarjetas de los médicos) -->
+  <div class="row g-4">
+    <!-- Bucle ultra rápido de Angular 20 -->
+    @for (medico of medicosFiltrados(); track medico.id) {
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 text-center pt-4">
+          <div 
+  class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center text-white shadow-sm" 
+  style="width: 120px; height: 120px; background-color: #4b1a85; font-size: 2.5rem; font-weight: bold;">
+  {{ obtenerIniciales(medico.nombre) }}
+</div>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ medico.nombre }}</h5>
+            <p class="card-text text-primary">{{ medico.especialidad }}</p>
+          </div>
+          <div class="card-footer bg-white border-0 pb-4">
+            <button (click)="irAAgendamiento()" class="btn btn-outline-primary w-100 rounded-pill">Agendar Cita</button>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <!-- Lo que sale si la búsqueda no encuentra nada -->
+      <div class="col-12 text-center text-muted py-5">
+        <h4>No se encontraron especialistas</h4>
+        <p>Intenta con otro nombre o especialidad.</p>
+      </div>
+    }
+  </div>
+</div>
