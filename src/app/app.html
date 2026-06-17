@@ -1,13 +1,28 @@
+<!-- Menú Superior Corporativo -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4" routerLink="/" style="color: #4b1a85;">
-      Instituto <span style="color: #19a5b5;">Cardiovascular GF</span>
+    
+    <!-- BRAND: LOGO IMAGEN + NOMBRE OFICIAL -->
+    <a class="navbar-brand d-flex align-items-center fw-bold text-decoration-none py-1" routerLink="/" style="color: #0b348f;">
+      <!-- Subimos a 90px para máxima definición del texto circular -->
+      <img src="logo-icgf.png" 
+           alt="Logo Guthrie Forsmann" 
+           class="me-3 rounded-circle shadow-sm animate__animated animate__fadeIn" 
+           style="height: 90px; width: 90px; object-fit: cover; border: 2px solid #f0f0f0;">
+      
+      <!-- Nombre de la marca oficial con tipografía estilizada -->
+      <div class="d-flex flex-column justify-content-center" style="line-height: 1.25;">
+        <span class="fs-3 fw-bold mb-0" style="color: #4b1a85; letter-spacing: 0.5px; font-family: 'Segoe UI', Roboto, sans-serif;">Guthrie Forsmann</span>
+        <span class="fs-6 fw-bold text-secondary text-uppercase" style="letter-spacing: 1.5px; font-size: 0.8rem !important; color: #19a5b5 !important;">Instituto Cardiovascular</span>
+      </div>
     </a>
     
+    <!-- Botón para celulares (Responsive) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     
+    <!-- Enlaces de las páginas (Se mantienen intactos y limpios) -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-2">
         <li class="nav-item">

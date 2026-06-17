@@ -1,47 +1,70 @@
 <div class="container py-5">
+  
+  <!-- 1. TÍTULO PRINCIPAL DE LA PÁGINA -->
   <div class="text-center mb-5">
-    <h2 class="fw-bold" style="color: #2c3e50;">Encuentra a tu Especialista</h2>
-    <p class="text-muted">Busca por nombre o tratamiento médico</p>
+    <span class="text-uppercase fw-bold" style="color: #19a5b5; letter-spacing: 1px;">Nuestro Staff</span>
+    <h1 class="fw-bold display-5 mt-2" style="color: #2c3e50;">Especialistas Médicos</h1>
+    <p class="text-muted">Conoce a los profesionales comprometidos con el cuidado de tu salud.</p>
   </div>
 
-  <!-- Barra de Búsqueda -->
-  <div class="row justify-content-center mb-5">
-    <div class="col-md-8 col-lg-6">
-      <input 
-        type="text" 
-        class="form-control form-control-lg shadow-sm" 
-        placeholder="Ej. Hemodinamia, Arritmias, Dr. Paulina..."
-        [(ngModel)]="terminoBusqueda"
-      >
-    </div>
-  </div>
-
-  <!-- Resultados (Tarjetas de los médicos) -->
-  <div class="row g-4">
-    <!-- Bucle ultra rápido de Angular 20 -->
+  <!-- 2. ¡PRIMERO LOS DOCTORES! (Aparecen inmediatamente arriba) -->
+  <div class="row g-4 mb-5">
     @for (medico of medicosFiltrados(); track medico.id) {
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0 text-center pt-4">
-          <div 
-  class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center text-white shadow-sm" 
-  style="width: 120px; height: 120px; background-color: #4b1a85; font-size: 2.5rem; font-weight: bold;">
-  {{ obtenerIniciales(medico.nombre) }}
-</div>
-          <div class="card-body">
-            <h5 class="card-title fw-bold">{{ medico.nombre }}</h5>
-            <p class="card-text text-primary">{{ medico.especialidad }}</p>
+      <div class="col-md-4">
+        <div class="card h-100 p-4 border-0 shadow-sm rounded-4 text-center">
+          
+          <!-- Avatar con iniciales automáticas -->
+          <div class="mx-auto mb-3 d-flex align-items-center justify-content-center text-white rounded-circle shadow-sm" 
+               style="width: 100px; height: 100px; background-color: #4b1a85; font-size: 2.2rem; font-weight: bold;">
+            {{ obtenerIniciales(medico.nombre) }}
           </div>
-          <div class="card-footer bg-white border-0 pb-4">
-            <button (click)="irAAgendamiento()" class="btn btn-outline-primary w-100 rounded-pill">Agendar Cita</button>
+          
+          <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{ medico.nombre }}</h4>
+          <span class="badge bg-light text-primary rounded-pill px-3 py-2 fw-semibold mb-3 fs-6">
+            {{ medico.especialidad }}
+          </span>
+          
+          <div class="mt-auto">
+            <button (click)="irAAgendamiento()" class="btn btn-outline-primary rounded-pill w-100 fw-bold">
+              Agendar con Especialista
+            </button>
           </div>
         </div>
       </div>
     } @empty {
-      <!-- Lo que sale si la búsqueda no encuentra nada -->
-      <div class="col-12 text-center text-muted py-5">
-        <h4>No se encontraron especialistas</h4>
-        <p>Intenta con otro nombre o especialidad.</p>
+      <!-- Mensaje por si filtran algo abajo que no existe -->
+      <div class="col-12 text-center py-5">
+        <div class="p-4 mx-auto rounded-4 bg-light" style="max-width: 500px;">
+          <p class="fs-5 text-muted mb-0">No se encontraron especialistas con ese nombre o área.</p>
+        </div>
       </div>
     }
   </div>
+
+  <!-- Separador sutil -->
+  <hr class="text-muted my-5">
+
+  <!-- 3. LA SECCIÓN DE BÚSQUEDA AHORA QUEDA ABAJO DEL TODO -->
+  <div class="row justify-content-center pt-2">
+    <div class="col-lg-6 text-center">
+      <h5 class="fw-bold text-secondary mb-3">¿Buscas un especialista o área en particular?</h5>
+      
+      <!-- Input de búsqueda -->
+      <div class="input-group mb-2 shadow-sm rounded-pill overflow-hidden" style="border: 1px solid #e0e0e0;">
+        <span class="input-group-text bg-white border-0 ps-4 text-muted">🔍</span>
+        <input 
+          type="text" 
+          class="form-control border-0 py-3 pe-4 shadow-none" 
+          placeholder="Filtra por nombre o especialidad..."
+          [(ngModel)]="terminoBusqueda"
+        >
+      </div>
+      
+      <!-- Recomendación de cómo hacer la búsqueda -->
+      <p class="small text-muted fst-italic mt-2">
+        💡 <strong>Consejo de búsqueda:</strong> Puedes escribir palabras clave como <span class="text-primary">"Cardio"</span>, <span class="text-primary">"Vascular"</span> o el apellido del doctor para filtrar la lista instantáneamente.
+      </p>
+    </div>
+  </div>
+
 </div>
