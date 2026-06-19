@@ -1,0 +1,49 @@
+/* Contenedor Fijo Flotante en Pantalla */
+.social-float-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999; /* Máxima prioridad para que flote sobre todo */
+}
+
+/* Estilo Base Único para todos los Botones Redondos */
+.social-btn {
+  width: 48px;
+  height: 48px;
+  color: #ffffff !important;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.12);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+  }
+}
+
+/* Identidades Cromáticas Específicas */
+.whatsapp {
+  width: 58px;  /* El botón de acción principal de la clínica destaca más grande */
+  height: 58px;
+  background-color: #25d366;
+  
+  &:hover {
+    background-color: #128c7e;
+  }
+}
+
+.facebook {
+  background-color: #1877f2;
+  
+  &:hover {
+    background-color: #0b5cd4;
+  }
+}
+
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  
+  &:hover {
+    opacity: 0.95;
+  }
+}

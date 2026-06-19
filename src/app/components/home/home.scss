@@ -1,0 +1,22 @@
+/* Estilos personalizados para el carrusel publicitario */
+#carouselPublicidad {
+  .carousel-item {
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  }
+
+  .carousel-caption {
+    right: 15% !important;
+    left: 8% !important;
+    bottom: 0 !important;
+  }
+
+  .btn-carousel-action {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+      filter: brightness(1.1);
+    }
+  }
+}
