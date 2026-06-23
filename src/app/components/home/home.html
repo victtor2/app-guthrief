@@ -66,30 +66,11 @@
   </button>
 </div>
 
-<!-- 1. SECCIÓN HERO CON IMAGEN DE FONDO MÉDICO -->
-<div class="py-5 text-white position-relative" 
-     style="background: linear-gradient(rgba(25, 165, 181, 0.85), rgba(75, 26, 133, 0.9)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600') no-repeat center center/cover; min-height: 500px; display: flex; align-items: center;">
-  <div class="container py-5 text-center text-lg-start">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <span class="badge rounded-pill px-3 py-2 mb-3 text-uppercase fw-bold" style="background-color: rgba(255,255,255,0.2);">Excelencia Cardiológica</span>
-        <h1 class="display-3 fw-bold mb-3">Instituto Cardiovascular</h1>
-        <p class="lead fs-4 mb-5">
-          Cuidamos de tu salud con tecnología de vanguardia y especialistas líderes en el país. Tu corazón en las mejores manos.
-        </p>
-        <a routerLink="/medicos" class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm" style="color: #4b1a85; text-decoration: none;">
-          Conoce a Nuestro Personal
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 2. SECCIÓN ESPECIALIZACIÓN INTEGRAL -->
+<!-- 1. SECCIÓN ESPECIALIZACIÓN INTEGRAL -->
 <div class="container py-5 my-5">
   <div class="row align-items-center g-5">
     <div class="col-lg-6">
-      <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?w=800" 
+      <img src="images/corivear.png" 
            class="img-fluid rounded-4 shadow-sm" 
            alt="Evaluación Cardiovascular y Renal" 
            style="object-fit: cover; max-height: 450px; width: 100%;">
@@ -132,7 +113,7 @@
   </div>
 </div>
 
-<!-- 3. ÁREAS DE ESPECIALIZACIÓN CON TARJETAS FOTOGRÁFICAS -->
+<!-- 2. ÁREAS DE ESPECIALIZACIÓN CON TARJETAS FOTOGRÁFICAS -->
 <div class="py-5" style="background-color: #f3fbfb;">
   <div class="container py-4">
     <div class="text-center mb-5">
@@ -141,10 +122,10 @@
     </div>
     
     <div class="row g-4">
-      <!-- Tarjeta 1 -->
-      <div class="col-md-4">
+      <!-- Tarjeta 1: Cardiología Clínica -->
+      <div class="col-md-6 col-lg-3">
         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=500" class="card-img-top" alt="Cardiología Clínica" style="height: 200px; object-fit: cover;">
+          <img src="images/carcli.png" class="card-img-top" alt="Cardiología Clínica" style="height: 200px; object-fit: cover;">
           <div class="card-body p-4">
             <h4 class="fw-bold mb-2" style="color: #2c3e50;">Cardiología Clínica</h4>
             <p class="text-muted small mb-0">Evaluación integral, consulta preventiva, electrocardiogramas y control de factores de riesgo cardiovascular.</p>
@@ -152,10 +133,10 @@
         </div>
       </div>
       
-      <!-- Tarjeta 2 -->
-      <div class="col-md-4">
+      <!-- Tarjeta 2: Cirugía Vascular -->
+      <div class="col-md-6 col-lg-3">
         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=500" class="card-img-top" alt="Cirugía Vascular" style="height: 200px; object-fit: cover;">
+          <img src="images/cirvas.png" class="card-img-top" alt="Cirugía Vascular" style="height: 200px; object-fit: cover;">
           <div class="card-body p-4">
             <h4 class="fw-bold mb-2" style="color: #19a5b5;">Cirugía Vascular</h4>
             <p class="text-muted small mb-0">Diagnóstico avanzado y cirugías de vanguardia para corregir afecciones arteriales, venosas y varices.</p>
@@ -163,16 +144,29 @@
         </div>
       </div>
       
-      <!-- Tarjeta 3 -->
-      <div class="col-md-4">
+      <!-- Tarjeta 3: Hemodinamia -->
+      <div class="col-md-6 col-lg-3">
         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500" class="card-img-top" alt="Hemodinamia" style="height: 200px; object-fit: cover;">
+          <img src="images/hemo.png" class="card-img-top" alt="Hemodinamia" style="height: 200px; object-fit: cover;">
           <div class="card-body p-4">
             <h4 class="fw-bold mb-2" style="color: #2c3e50;">Hemodinamia</h4>
             <p class="text-muted small mb-0">Estudios endovasculares y cateterismos cardíacos inmediatos con la tecnología de intervención más moderna.</p>
           </div>
         </div>
       </div>
+
+      <!-- Tarjeta 4: Nefrología (¡NUEVA!) -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+          <!-- Guarda tu imagen de nefrología con este nombre en tu carpeta public/images -->
+          <img src="images/nefro.png" class="card-img-top" alt="Nefrología" style="height: 200px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-2" style="color: #19a5b5;">Nefrología</h4>
+            <p class="text-muted small mb-0">Prevención, diagnóstico y tratamiento integral de enfermedades renales, control de hipertensión arterial y terapia de reemplazo renal.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
