@@ -26,6 +26,9 @@ export class BuscadorMedicos {
   medicosFiltrados = computed(() => {
     const termino = this.terminoBusqueda().toLowerCase();
   
+    // 🔍 ¡METE ESTA LÍNEA DE ESPÍA AQUÍ!
+    console.log("Médicos desde Firebase:", this.medicosBD());
+
     // 1. IMPORTANTE: Ponemos las claves de búsqueda en MINÚSCULAS y palabras clave sencillas
     const prioridades: { [key: string]: number } = {
       'cardiolog': 1, // Captura "Cardióloga Clínica", "Cardiología", etc.

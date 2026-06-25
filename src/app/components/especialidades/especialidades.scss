@@ -1,14 +1,8 @@
 .specialty-card {
   transition: all 0.3s ease-in-out;
-  border-bottom: 4px solid transparent !important;
   
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(11, 52, 143, 0.1) !important;
-    border-bottom: 4px solid #19a5b5 !important;
-    
-    .icon-box {
-      background-color: #f0fdfa !important;
-    }
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2.5rem rgba(11, 52, 143, 0.12) !important;
   }
 }

@@ -3,7 +3,7 @@
   <!-- 1. TÍTULO PRINCIPAL DE LA PÁGINA -->
   <div class="text-center mb-5">
     <span class="text-uppercase fw-bold" style="color: #19a5b5; letter-spacing: 1px;">Nuestro Staff</span>
-    <h1 class="fw-bold display-5 mt-2" style="color: #2c3e50;">Especialistas Médicos</h1>
+    <h1 class="fw-bold display-5 mt-2" style="color: #2c3e50;">Médicos Especialistas</h1>
     <p class="text-muted">Conoce a los profesionales comprometidos con el cuidado de tu salud.</p>
   </div>
 
@@ -13,10 +13,21 @@
       <div class="col-md-4">
         <div class="card h-100 p-4 border-0 shadow-sm rounded-4 text-center">
           
-          <!-- Avatar con iniciales automáticas -->
-          <div class="mx-auto mb-3 d-flex align-items-center justify-content-center text-white rounded-circle shadow-sm" 
-               style="width: 100px; height: 100px; background-color: #4b1a85; font-size: 2.2rem; font-weight: bold;">
-            {{ obtenerIniciales(medico.nombre) }}
+          <div class="mx-auto mb-3" style="width: 120px; height: 120px;">
+            
+            @if (medico.imagen) {
+              <img [src]="medico.imagen" 
+                   [alt]="medico.nombre" 
+                   class="rounded-circle bg-white p-1 border shadow-sm" 
+                   style="width: 120px; height: 120px; object-fit: cover;"
+                   onerror="this.style.display='none'">
+            } @else {
+              <div class="d-flex align-items-center justify-content-center text-white rounded-circle shadow-sm" 
+                   style="width: 120px; height: 120px; background-color: #4b1a85; font-size: 2.5rem; font-weight: bold;">
+                {{ obtenerIniciales(medico.nombre) }}
+              </div>
+            }
+
           </div>
           
           <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{ medico.nombre }}</h4>
@@ -32,7 +43,6 @@
         </div>
       </div>
     } @empty {
-      <!-- Mensaje por si filtran algo abajo que no existe -->
       <div class="col-12 text-center py-5">
         <div class="p-4 mx-auto rounded-4 bg-light" style="max-width: 500px;">
           <p class="fs-5 text-muted mb-0">No se encontraron especialistas con ese nombre o área.</p>

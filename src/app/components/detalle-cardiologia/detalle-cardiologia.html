@@ -1,0 +1,75 @@
+<div *ngIf="datosEspecialidad" class="animate__animated animate__fadeIn">
+  
+  <div class="py-5 text-white text-center text-lg-start" style="background: linear-gradient(135deg, #0b348f 0%, #4b1a85 100%);">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-lg-1 text-center mb-3 mb-lg-0">
+          <div class="display-1">{{ datosEspecialidad.icono }}</div>
+        </div>
+        <div class="col-lg-11 ps-lg-4">
+          <h1 class="display-3 fw-bold mb-2">{{ datosEspecialidad.titulo }}</h1>
+          <p class="lead opacity-75 mb-0 fs-4">{{ datosEspecialidad.subtitulo }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-5">
+      
+      <div class="col-lg-7">
+        <h3 class="fw-bold mb-4 text-dark" style="border-bottom: 3px solid #19a5b5; display: inline-block; padding-bottom: 5px;">Sobre la Especialidad</h3>
+        <p class="text-muted lh-lg fs-5 mb-5">{{ datosEspecialidad.descripcion }}</p>
+
+        <h4 class="fw-bold mb-4 text-dark">Procedimientos y Servicios Comunes</h4>
+        <div class="row g-3">
+          <div class="col-md-6" *ngFor="let proc of datosEspecialidad.procedimientos">
+            <div class="d-flex align-items-center p-3 bg-light rounded-3 h-100 shadow-sm border-start border-4" style="border-color: #19a5b5 !important;">
+              <span class="me-2 fw-bold text-success">✓</span>
+              <span class="small fw-semibold text-secondary">{{ proc }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="p-4 rounded-4 shadow-sm bg-white border" style="border-top: 5px solid #4b1a85 !important;">
+          <h4 class="fw-bold mb-4 text-center text-lg-start" style="color: #0b348f;">Especialistas a Cargo</h4>
+          
+          <div class="row g-4 justify-content-center">
+            <div class="col-12" *ngFor="let doc of datosEspecialidad.medicos">
+              <div class="card border-0 bg-light p-3 rounded-4 h-100 d-flex flex-row align-items-center gap-3">
+                <img [src]="doc.imagen" 
+                     [alt]="doc.nombre" 
+                     class="rounded-circle bg-white p-1 border shadow-sm" 
+                     style="width: 150px; height: 150px; object-fit: cover;"
+                     onerror="this.src='images/logo-icgf.png'">
+                <div>
+                  <h5 class="fw-bold mb-1 text-dark" style="font-size: 1.1rem;">{{ doc.nombre }}</h5>
+                  <p class="text-muted small mb-2">{{ doc.cargo }}</p>
+                  <a routerLink="/contacto" class="btn btn-sm text-white rounded-pill px-3" style="background-color: #4b1a85; font-size: 0.75rem;">
+                    Agendar Cita
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 text-center border-top">
+            <a routerLink="/especialidades" class="btn btn-outline-secondary btn-sm rounded-pill px-4">
+              ← Volver a Especialidades
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="!datosEspecialidad" class="container py-5 text-center my-5">
+  <h2 class="text-danger">Especialidad no encontrada</h2>
+  <p class="text-muted">Por favor regrese al catálogo principal de servicios.</p>
+  <a routerLink="/especialidades" class="btn text-white rounded-pill px-4 mt-3" style="background-color: #0b348f;">Regresar</a>
+</div>

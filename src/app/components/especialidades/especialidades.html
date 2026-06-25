@@ -8,41 +8,73 @@
 </div>
 
 <div class="container py-5 my-3">
-  <div class="row g-5">
+  <div class="row g-4">
     
-    <div class="col-lg-4 col-md-6">
-      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #e74c3c; font-size: 2.5rem;">
-          ❤️
+    <div class="col-lg-3 col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
+           [routerLink]="['/especialidades', 'cardiologia']"
+           style="cursor: pointer; transition: all 0.3s ease;">
+        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #4b1a85; font-size: 2.5rem;">
+          🩺
         </div>
-        <h3 class="fw-bold mb-3" style="color: #0b348f;">Cardiología Clínica</h3>
-        <p class="text-muted small mb-0">
-          Evaluación integral, prevención, diagnóstico certero y tratamiento avanzado de patologías cardiovasculares, control de hipertensión arterial, arritmias, insuficiencia cardíaca y chequeos preventivos de alta fidelidad.
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cardiología Clínica</h3>
+        <p class="text-muted small mb-4">
+          Evaluación integral, prevención, diagnóstico certero y tratamiento avanzado de patologías cardiovasculares, control de hipertensión arterial y arritmias.
         </p>
+        <div class="mt-auto">
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+        </div>
       </div>
     </div>
 
-    <div class="col-lg-4 col-md-6">
-      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card">
+    <div class="col-lg-3 col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
+           [routerLink]="['/especialidades', 'cirugia-vascular']"
+           style="cursor: pointer; transition: all 0.3s ease;">
         <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #19a5b5; font-size: 2.5rem;">
           🩸
         </div>
-        <h3 class="fw-bold mb-3" style="color: #0b348f;">Cirugía Vascular</h3>
-        <p class="text-muted small mb-0">
-          Soluciones avanzadas para el sistema circulatorio periférico. Tratamiento especializado y estético de várices, úlceras varicosas, trombosis venosa profunda y procedimientos endovasculares mínimamente invasivos.
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cirugía Vascular</h3>
+        <p class="text-muted small mb-4">
+          Soluciones avanzadas para el sistema circulatorio periférico. Tratamiento especializado de várices, trombosis venosa profunda y procedimientos mínimamente invasivos.
         </p>
+        <div class="mt-auto">
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+        </div>
       </div>
     </div>
 
-    <div class="col-lg-4 col-md-6 mx-auto">
-      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #4b1a85; font-size: 2.5rem;">
+    <div class="col-lg-3 col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
+           [routerLink]="['/especialidades', 'hemodinamia']"
+           style="cursor: pointer; transition: all 0.3s ease;">
+        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #e74c3c; font-size: 2.5rem;">
+          ❤️
+        </div>
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Hemodinamia</h3>
+        <p class="text-muted small mb-4">
+          Estudios endovasculares avanzados, cateterismos cardíacos diagnósticos y terapéuticos inmediatos con la tecnología de intervención más moderna.
+        </p>
+        <div class="mt-auto">
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
+           [routerLink]="['/especialidades', 'nefrologia']"
+           style="cursor: pointer; transition: all 0.3s ease;">
+        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #9b59b6; font-size: 2.5rem;">
           🧬
         </div>
-        <h3 class="fw-bold mb-3" style="color: #0b348f;">Nefrología</h3>
-        <p class="text-muted small mb-0">
-          Protección y cuidado del sistema renal. Diagnóstico y tratamiento de la insuficiencia renal aguda y crónica, infecciones de las vías urinarias, nefropatía diabética, hipertensiva y terapias de sustitución renal oportunas.
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Nefrología</h3>
+        <p class="text-muted small mb-4">
+          Protección y cuidado del sistema renal. Diagnóstico y tratamiento de la insuficiencia renal crónica, nefropatía diabética e hipertensiva y terapias de sustitución.
         </p>
+        <div class="mt-auto">
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+        </div>
       </div>
     </div>
 
