@@ -3,11 +3,12 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop'; // <-- Para transformar Firebase a Signals
 import { Medicos } from '../../services/medicos';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-buscador-medicos',
   standalone: true,
-  imports: [CommonModule, FormsModule], //Importamos FormsModule para el input de búsqueda
+  imports: [CommonModule, FormsModule, RouterModule], //Importamos FormsModule para el input de búsqueda
   templateUrl: './buscador-medicos.html',
   styleUrl: './buscador-medicos.scss',
 })
@@ -26,9 +27,6 @@ export class BuscadorMedicos {
   medicosFiltrados = computed(() => {
     const termino = this.terminoBusqueda().toLowerCase();
   
-    // 🔍 ¡METE ESTA LÍNEA DE ESPÍA AQUÍ!
-    console.log("Médicos desde Firebase:", this.medicosBD());
-
     // 1. IMPORTANTE: Ponemos las claves de búsqueda en MINÚSCULAS y palabras clave sencillas
     const prioridades: { [key: string]: number } = {
       'cardiolog': 1, // Captura "Cardióloga Clínica", "Cardiología", etc.
@@ -36,8 +34,11 @@ export class BuscadorMedicos {
       'nefrol': 3     // Captura "Nefrologo", "Nefrología"
     };
 
-    // Paso A: Filtramos la base de datos (Usamos 'medico: any' para eliminar el error de compilación)
-    const medicosFiltradosBase = this.medicosBD().filter((medico: any) => {
+    // Casteamos como any[] para heredar flexibilidad en el HTML con la propiedad .imagen
+    const listaMedicos = this.medicosBD() as any[];
+
+    // Paso A: Filtramos la base de datos
+    const medicosFiltradosBase = listaMedicos.filter((medico: any) => {
       const nombreMedico = (medico.nombre || '').toLowerCase();
       const textEspecialidad = (medico.especialidad || '').toLowerCase();
       return nombreMedico.includes(termino) || textEspecialidad.includes(termino);
@@ -61,7 +62,7 @@ export class BuscadorMedicos {
   });
 
   // Función para obtener las iniciales del médico (para el avatar)
- obtenerIniciales(nombreCompleto: string): string {
+  obtenerIniciales(nombreCompleto: string): string {
     if (!nombreCompleto) return '';
     // Limpiamos los títulos profesionales para sacar las iniciales reales del nombre
     const nombreLimpio = nombreCompleto.replace('Dr. ', '').replace('Dra. ', '');
@@ -73,11 +74,24 @@ export class BuscadorMedicos {
     return palabras[0].charAt(0).toUpperCase();
   }
 
+  // 🔍 ¡AQUÍ ESTÁ EL MÉTODO NUEVO QUE MAPEA CON TUS LLAVES DEL PERFIL!
+  obtenerSlug(nombreCompleto: string): string {
+    if (!nombreCompleto) return 'dra_paulina';
+    const nombreLimpio = nombreCompleto.toLowerCase();
+    
+    if (nombreLimpio.includes('verónica') || nombreLimpio.includes('veronica')) return 'dra_veronica';
+    if (nombreLimpio.includes('karina')) return 'dra_karina';
+    if (nombreLimpio.includes('fernanda')) return 'dra_fernanda';
+    if (nombreLimpio.includes('paulina')) return 'dra_paulina';
+    if (nombreLimpio.includes('harold')) return 'dr_harold';
+    
+    return 'dra_paulina'; // Fallback seguro
+  }
+
   irAAgendamiento() {
     document.getElementById('seccion-agendar')?.scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     });
   }
-
 }

@@ -30,7 +30,13 @@
 
           </div>
           
-          <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{ medico.nombre }}</h4>
+          <h4 class="fw-bold mb-2" 
+              [routerLink]="['/medicos', obtenerSlug(medico.nombre)]" 
+              style="color: #2c3e50; cursor: pointer; transition: color 0.2s ease;"
+              onmouseover="this.style.color='#19a5b5'" 
+              onmouseout="this.style.color='#2c3e50'">
+              {{ medico.nombre }}
+          </h4>
           <span class="badge bg-light text-primary rounded-pill px-3 py-2 fw-semibold mb-3 fs-6">
             {{ medico.especialidad }}
           </span>

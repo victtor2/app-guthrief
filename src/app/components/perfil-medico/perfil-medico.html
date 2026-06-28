@@ -1,0 +1,63 @@
+<div *ngIf="perfil" class="container py-5 my-4">
+  
+  <div class="mb-4">
+    <a routerLink="/medicos" class="text-decoration-none fw-bold" style="color: #19a5b5;">
+      ← Volver al Staff Médico
+    </a>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-lg-4 text-center">
+      <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+        <img [src]="perfil.imagen" 
+             [alt]="perfil.nombre" 
+             class="rounded-circle bg-light p-1 border shadow-sm mx-auto mb-4" 
+             style="width: 200px; height: 200px; object-fit: cover;"
+             onerror="this.src='images/logo-icgf.png'">
+        
+        <h3 class="fw-bold text-dark mb-1">{{ perfil.nombre }}</h3>
+        <span class="badge bg-light text-primary rounded-pill px-3 py-2 fw-semibold fs-6 mb-4">
+          {{ perfil.especialidad }}
+        </span>
+        
+        <a routerLink="/contacto" class="btn text-white rounded-pill w-100 py-3 fw-bold shadow-sm" style="background-color: #4b1a85;">
+          Agendar Cita Directa
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="p-4 rounded-4 shadow-sm bg-white h-100 border-top border-4" style="border-color: #0b348f !important;">
+        
+        <h4 class="fw-bold mb-3" style="color: #0b348f;">Perfil Profesional</h4>
+        <p class="text-muted lh-lg fs-5 mb-5">{{ perfil.resumen }}</p>
+
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-dark">
+            <span class="me-2">🎓</span> Formación Académica
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent ps-0 border-0 d-flex gap-2" *ngFor="let estudio of perfil.estudios">
+              <span class="text-primary fw-bold">•</span>
+              <span class="text-secondary fw-semibold">{{ estudio }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="fw-bold mb-3 text-dark">
+            <span class="me-2">💼</span> Cursos y Seminarios
+          </h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent ps-0 border-0 d-flex gap-2" *ngFor="let exp of perfil.experiencia">
+              <span class="text-success fw-bold">✓</span>
+              <span class="text-secondary fw-semibold">{{ exp }}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
