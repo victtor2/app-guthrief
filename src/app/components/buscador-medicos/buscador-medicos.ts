@@ -3,7 +3,7 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop'; // <-- Para transformar Firebase a Signals
 import { Medicos } from '../../services/medicos';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscador-medicos',
@@ -17,6 +17,9 @@ export class BuscadorMedicos {
   // 1. Inyectamos tu servicio conectado a Firestore
   private medicosService = inject(Medicos);
   
+  // Inyectamos el servicio Router de Angular
+  private router = inject(Router);
+
   // 2. Traemos los médicos en tiempo real y los transformamos en un Signal nativo
   medicosBD = toSignal(this.medicosService.obtenerMedicos(), { initialValue: [] });
 
@@ -89,9 +92,7 @@ export class BuscadorMedicos {
   }
 
   irAAgendamiento() {
-    document.getElementById('seccion-agendar')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
+    // Esto redirecciona directo a tu ruta { path: 'agendar', component: Agendamiento }
+    this.router.navigate(['/agendar']);
   }
 }
