@@ -10,22 +10,19 @@
       <div class="card p-4 border-0 shadow-sm rounded-4 h-100" style="background-color: #f8f9fa;">
         <h4 class="fw-bold mb-4" style="color: #4b1a85;">Información del Instituto</h4>
         
-        <!-- Dirección (Actualizada con las dos ubicaciones) -->
         <div class="d-flex mb-4">
           <div class="rounded-circle d-flex align-items-center justify-content-center bg-white text-primary shadow-sm me-3" style="width: 50px; height: 50px; min-width: 50px; font-size: 1.3rem;">📍</div>
           <div>
             <h5 class="fw-bold mb-1" style="color: #2c3e50;">Nuestras Ubicaciones</h5>
             
-            <!-- Ubicación 1 -->
             <div class="mb-2">
-              <strong style="color: #19a5b5;">• Matriz:</strong>
-              <p class="text-muted mb-0 ps-2">Edificio Fortune Plaza, Piso 7</p>
+              <strong style="color: #19a5b5;">• Matriz: Quito-Ecuador </strong>
+              <p class="text-muted mb-0 ps-2">Ed. Fortune Plaza, Piso 7</p>
             </div>
             
-            <!-- Ubicación 2 -->
             <div>
               <strong style="color: #4b1a85;">• Centro Médico:</strong>
-              <p class="text-muted mb-0 ps-2">Clínica San Rafael</p>
+              <p class="text-muted mb-0 ps-2">Clínica San Rafael - Valle de los Chillos</p>
             </div>
           </div>
         </div>
@@ -34,7 +31,7 @@
           <div class="rounded-circle d-flex align-items-center justify-content-center bg-white text-primary shadow-sm me-3" style="width: 50px; height: 50px; min-width: 50px; font-size: 1.3rem;">📞</div>
           <div>
             <h5 class="fw-bold mb-1" style="color: #2c3e50;">Teléfonos de Contacto</h5>
-            <p class="text-muted mb-0">Central: (02) 234-5678<br>Urgencias: (02) 999-9999</p>
+            <p class="text-muted mb-0">Central: (+593) 99-577-9467<br>Urgencias: (+593) 99-577-9467</p>
           </div>
         </div>
 
@@ -42,7 +39,7 @@
           <div class="rounded-circle d-flex align-items-center justify-content-center bg-white text-primary shadow-sm me-3" style="width: 50px; height: 50px; min-width: 50px; font-size: 1.3rem;">🕒</div>
           <div>
             <h5 class="fw-bold mb-1" style="color: #2c3e50;">Horario de Atención</h5>
-            <p class="text-muted mb-0">Lunes a Viernes: 08:00 - 18:00<br>Sábados: 09:00 - 13:00</p>
+            <p class="text-muted mb-0">Lunes a Viernes: 08:00 - 18:00<br>Sábados - Domingos: Atencion bajo previa cita</p>
           </div>
         </div>
 
@@ -58,11 +55,12 @@
       <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4">
         <h4 class="fw-bold mb-4" style="color: #2c3e50;">Envíanos un Mensaje Directo</h4>
         
-        <form>
+        <form [formGroup]="miFormulario" (ngSubmit)="enviarFormulario()">
           <div class="row g-3 mb-3">
             <div class="col-md-6">
               <label class="form-label text-secondary small fw-bold">Nombre Completo</label>
-              <input type="text" class="form-control bg-light" placeholder="Tu nombre">
+              <input type="text" formControlName="nombre" class="form-control bg-light" placeholder="Tu nombre" [ngClass]="{'is-invalid': miFormulario.get('nombre')?.touched && miFormulario.get('nombre')?.invalid}">
+              <div class="invalid-feedback">El nombre es requerido (mínimo 3 letras).</div>
             </div>
             <div class="col-md-6">
               <label class="form-label text-secondary small fw-bold">Número de Teléfono</label>
@@ -72,23 +70,26 @@
 
           <div class="mb-3">
             <label class="form-label text-secondary small fw-bold">Correo Electrónico</label>
-            <input type="email" class="form-control bg-light" placeholder="nombre@correo.com">
+            <input type="email" formControlName="correo" class="form-control bg-light" placeholder="nombre@correo.com" [ngClass]="{'is-invalid': miFormulario.get('correo')?.touched && miFormulario.get('correo')?.invalid}">
+            <div class="invalid-feedback">Por favor introduce un correo válido.</div>
           </div>
 
           <div class="mb-4">
             <label class="form-label text-secondary small fw-bold">¿En qué podemos ayudarte?</label>
-            <textarea class="form-control bg-light" rows="5" placeholder="Escribe aquí tus dudas o comentarios generales..."></textarea>
+            <textarea formControlName="mensaje" class="form-control bg-light" rows="5" placeholder="Escribe aquí tus dudas o comentarios generales..." [ngClass]="{'is-invalid': miFormulario.get('mensaje')?.touched && miFormulario.get('mensaje')?.invalid}"></textarea>
+            <div class="invalid-feedback">El mensaje es requerido (mínimo 10 caracteres).</div>
           </div>
 
-          <button type="button" class="btn btn-lg text-white w-100 rounded-pill shadow-sm" style="background-color: #19a5b5; font-weight: 600;">
-            Enviar Mensaje
+          <button type="submit" [disabled]="cargando" class="btn btn-lg text-white w-100 rounded-pill shadow-sm" style="background-color: #19a5b5; font-weight: 600;">
+            <span *ngIf="cargando" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ cargando ? 'Enviando...' : 'Enviar Mensaje' }}
           </button>
         </form>
       </div>
     </div>
   </div>
 </div>
-<!-- 3. SECCIÓN DE GOOGLE MAPS CORREGIDA (ELOY ALFARO E ITALIA + VALLE DE LOS CHILLOS) -->
+
 <div class="container pb-5 mb-4">
   <div class="text-center mb-4">
     <h4 class="fw-bold text-secondary">¿Cómo llegar a nuestros centros?</h4>
@@ -97,31 +98,29 @@
 
   <div class="row g-4">
     
-    <!-- MAPA 1: EDIFICIO FORTUNE PLAZA (ELOY ALFARO E ITALIA) -->
     <div class="col-lg-6">
       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
         <div class="p-3 bg-white border-bottom d-flex align-items-center">
           <div class="rounded-circle d-flex align-items-center justify-content-center text-white me-3" style="width: 35px; height: 35px; background-color: #19a5b5; font-size: 0.9rem;">📍</div>
           <div>
-            <h6 class="fw-bold mb-0" style="color: #2c3e50;">Matriz: Edificio Fortune Plaza</h6>
-            <small class="text-muted" style="font-size: 0.75rem;">Av. Eloy Alfaro e Italia (Piso 7)</small>
+            <h6 class="fw-bold mb-0" style="color: #2c3e50;">Matriz: Ed. Fortune Plaza, Piso 7 </h6>
+            <small class="text-muted" style="font-size: 0.75rem;">Av. Eloy Alfaro y Italia esq.</small>
           </div>
         </div>
         
-        <!-- Mapa Fortune Plaza (Ubicación exacta en Eloy Alfaro e Italia) -->
         <div class="ratio ratio-16x9" style="min-height: 300px;">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7915!2d-78.4812!3d-0.1818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a2245b95555%3A0x5555555555555555!2sEdificio%20Fortune%20Plaza!5e0!3m2!1ses!2sec!4v1718586000000!5m2!1ses!2sec" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.795619718915!2d-78.49584941114499!3d-0.19327700000000694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b2bb0574b7d%3A0x25a6f701f4701430!2sEdificio%20Fortune%20Plaza!5e0!3m2!1ses!2sec!4v1782797767288!5m2!1ses!2sec" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
+           Glaser
           </iframe>
         </div>
       </div>
     </div>
 
-    <!-- MAPA 2: CLÍNICA SAN RAFAEL -->
     <div class="col-lg-6">
       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
         <div class="p-3 bg-white border-bottom d-flex align-items-center">
@@ -132,7 +131,6 @@
           </div>
         </div>
         
-        <!-- Mapa Clínica San Rafael (Ubicación real del enlace) -->
         <div class="ratio ratio-16x9" style="min-height: 300px;">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.74249111354!2d-78.4581666!3d-0.3053845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5bd43aea83041%3A0xb6c03c748fe7a200!2sClinica%20San%20Rafael!5e0!3m2!1ses!2sec!4v1718585500000!5m2!1ses!2sec" 
