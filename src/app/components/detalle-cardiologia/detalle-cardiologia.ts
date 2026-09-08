@@ -43,13 +43,13 @@ export class DetalleCardiologia implements OnInit {
     },
     'cirugia-vascular': {
       titulo: 'Cirugía Vascular y Endovascular',
-      subtitulo: 'Soluciones definitivas para el sistema circulatorio periférico',
-      descripcion: 'Ofrecemos tratamientos de vanguardia para trastornos arteriales y venosos, combinando técnicas quirúrgicas tradicionales con procedimientos endovasculares mínimamente invasivos y estéticos.',
+      subtitulo: 'Nuestro objetivo es mejorar el flujo sanguíneo y previnir complicaciones mortales o de amputación',
+      descripcion: 'Ofrecemos tratamientos de vanguardia para prevenir, diagnosticar y tratar enfermedades de los vasos sanguíneos; combinando procedimientos y terapias vasculares, endovasculares con tecnología de punta.',
       icono: '🩸',
-      procedimientos: ['Tratamiento láser avanzado de várices', 'Escleroterapia guiada para arañitas vasculares', 'Manejo integral de úlceras varicosas', 'Ecocardiograma Doppler Venoso y Arterial'],
+      procedimientos: ['Diagnosticar trastornos arteriales, venosos y linfáticos.', 'Tratamientos de varices en miembros inferiores de avanzada.', 'Creación y confección de accesos vasculares para hemodiálisis.', 'Identificación y tratamiento en lesiones de "Pie Diabético".', 'Ecografías vasculares: Carótidas, Aorticas, Arterias periféricas, Doppler venoso.'],
       medicos: [
-        { nombre: 'Dra. Karina Garzón', cargo: 'Cirujana Vascular y Endovascular', imagen: 'images/karina.png' },
-        { nombre: 'Dra. Fernanda Escobar', cargo: 'Cirujana Vascular y Endovascular', imagen: 'images/fernanda.png' }
+        { nombre: 'Dra. Fernanda Escobar', cargo: 'Cirujana Vascular y Endovascular', imagen: 'images/fernanda.png' },
+        { nombre: 'Dra. Karina Garzón', cargo: 'Cirujana Vascular y Endovascular', imagen: 'images/karina.png' }
       ]
     },
     'hemodinamia': {
