@@ -7,6 +7,53 @@
   </div>
 </div>
 
+<!-- Sección de Tarjetas de Servicios -->
+<div class="container py-5">
+  <div class="row g-4">
+    
+    <!-- Tarjeta 1: Cardiología / Ejemplo -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm border-0 overflow-hidden">
+        <img src="/images/cardiologia.jpg" class="card-img-top" alt="Cardiología" style="height: 220px; object-fit: cover;">
+        <div class="card-body p-4 text-center">
+          <h5 class="card-title fw-bold text-dark">Cardiología Clínica</h5>
+          <p class="card-text text-muted small">
+            Diagnóstico y tratamiento integral de patologías cardiovasculares con equipos de alta precisión.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2: Ejemplo -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm border-0 overflow-hidden">
+        <img src="/images/vascular.jpg" class="card-img-top" alt="Especialidad 2" style="height: 220px; object-fit: cover;">
+        <div class="card-body p-4 text-center">
+          <h5 class="card-title fw-bold text-dark">Cirugía Cardiovascular</h5>
+          <p class="card-text text-muted small">
+            Procedimientos quirúrgicos especializados respaldados por un equipo médico de excelencia.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3: Ejemplo -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm border-0 overflow-hidden">
+        <img src="/images/nefrologia.jpg" class="card-img-top" alt="Especialidad 3" style="height: 220px; object-fit: cover;">
+        <div class="card-body p-4 text-center">
+          <h5 class="card-title fw-bold text-dark">Nefrología Especializada</h5>
+          <p class="card-text text-muted small">
+            Evaluaciones médicas completas diseñadas para monitorear y cuidar tu salud de forma proactiva.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <div class="container py-5 my-3">
   <div class="row g-4">
     
@@ -14,9 +61,15 @@
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'cardiologia']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #4b1a85; font-size: 2.5rem;">
-          🩺
+        <!-- Foto en el círculo -->
+        <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
+            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+          <img src="/images/cardioclinica.jpg" 
+              alt="Cardiología Clínica" 
+              class="w-100 h-100" 
+              style="object-fit: cover;">
         </div>
+
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cardiología Clínica</h3>
         <p class="text-muted small mb-4">
           Evaluación integral, prevención, diagnóstico certero y tratamiento avanzado de patologías cardiovasculares, control de hipertensión arterial y arritmias.
@@ -29,28 +82,17 @@
 
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
-           [routerLink]="['/especialidades', 'cirugia-vascular']"
-           style="cursor: pointer; transition: all 0.3s ease;">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #19a5b5; font-size: 2.5rem;">
-          🩸
-        </div>
-        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cirugía Vascular</h3>
-        <p class="text-muted small mb-4">
-          Soluciones avanzadas para el sistema circulatorio periférico. Tratamiento especializado de várices, trombosis venosa profunda y procedimientos mínimamente invasivos.
-        </p>
-        <div class="mt-auto">
-          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6">
-      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'hemodinamia']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #e74c3c; font-size: 2.5rem;">
-          ❤️
+        <!-- Foto en el círculo -->
+        <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
+            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+          <img src="/images/hemodinamia.jpg" 
+              alt="Hemodinamia" 
+              class="w-100 h-100" 
+              style="object-fit: cover;">
         </div>
+
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Hemodinamia</h3>
         <p class="text-muted small mb-4">
           Estudios endovasculares avanzados, cateterismos cardíacos diagnósticos y terapéuticos inmediatos con la tecnología de intervención más moderna.
@@ -63,11 +105,40 @@
 
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
+           [routerLink]="['/especialidades', 'cirugia-vascular']"
+           style="cursor: pointer; transition: all 0.3s ease;">
+        <!-- Foto en el círculo -->
+        <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
+            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+          <img src="/images/piediabetico.jpeg" 
+              alt="Cirugía Vascular" 
+              class="w-100 h-100" 
+              style="object-fit: cover;">
+        </div>
+
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cirugía Vascular</h3>
+        <p class="text-muted small mb-4">
+          Soluciones avanzadas para el sistema circulatorio periférico. Tratamiento especializado de várices, trombosis venosa profunda y procedimientos mínimamente invasivos.
+        </p>
+        <div class="mt-auto">
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'nefrologia']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <div class="icon-box rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px; color: #9b59b6; font-size: 2.5rem;">
-          🧬
+        <!-- Foto en el círculo -->
+        <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
+            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+          <img src="/images/nefro.png" 
+              alt="Nefrologia" 
+              class="w-100 h-100" 
+              style="object-fit: cover;">
         </div>
+
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Nefrología</h3>
         <p class="text-muted small mb-4">
           Protección y cuidado del sistema renal. Diagnóstico y tratamiento de la insuficiencia renal crónica, nefropatía diabética e hipertensiva y terapias de sustitución.
