@@ -69,7 +69,7 @@ export class DetalleCardiologia implements OnInit {
       icono: '🧬',
       procedimientos: ['Prevención y freno de Insuficiencia Renal', 'Manejo de Nefropatía Diabética e Hipertensiva', 'Tratamiento de Infecciones Urinarias Recurrentes', 'Coordinación de Terapias de Reemplazo Renal'],
       medicos: [
-        { nombre: 'Dr. Harold Álvarez', cargo: 'Nefrólogo Clínico', imagen: 'images/doctor_defecto.png' }
+        { nombre: 'Dr. Harold Álvarez', cargo: 'Nefrólogo Clínico', imagen: 'images/harold.png' }
       ]
     }
   };
