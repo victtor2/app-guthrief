@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página Principal -->
+  <url>
+    <loc>https://www.cardiovasculargf.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Perfiles de las 5 Doctoras -->
+  <url>
+    <loc>https://www.cardiovasculargf.com/medicos/dra_paulina</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cardiovasculargf.com/medicos/dra_karina</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cardiovasculargf.com/medicos/dra_fernanda</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cardiovasculargf.com/medicos/dra_veronica</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cardiovasculargf.com/medicos/dr_harold</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

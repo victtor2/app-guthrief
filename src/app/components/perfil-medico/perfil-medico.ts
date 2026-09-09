@@ -141,7 +141,7 @@ export class PerfilMedico implements OnInit{
       nombre: 'Dra. Harold Álvarez',
       especialidad: 'Nefrología',
       subtitulo: 'Especialista en nefrología diagnóstica, clínica, intervencionista y crítica.',
-      imagen: 'images/nefro.png',
+      imagen: 'images/harold.png',
       resumen: 'La nefrología clínica, diagnóstica e intervencionista se centra en prevenir, diagnosticar y tratar enfermedades renales, metabólicas y autoinmunes, usando tanto métodos médicos como intervenciones especializadas, incluyendo manejo de pacientes críticos y terapias de reemplazo renal.',
       estudios: [
         'Postgrado: ',
