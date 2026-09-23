@@ -62,14 +62,30 @@ export class BuscadorMedicos {
     });
   });
 
-  // 3. SECCIÓN: Asociados Nacionales (Dr. Harold)
-  medicosNacionales = computed(() => {
-    return this.medicosFiltrados().filter((medico: any) => {
-      const cat = (medico.categoria || '').toLowerCase();
-      const nom = (medico.nombre || '').toLowerCase();
-      return cat === 'nacional' || nom.includes('harold');
-    });
+  // 3. SECCIÓN: Asociados Nacionales (Avatar provisional)
+medicosNacionales = computed(() => {
+  const nacionalesBase = this.medicosFiltrados().filter((medico: any) => {
+    const cat = (medico.categoria || '').toLowerCase();
+    const nom = (medico.nombre || '').toLowerCase();
+    // Excluimos completamente al Dr. Harold
+    return (cat === 'nacional' || nom.includes('harold')) && !nom.includes('harold');
   });
+
+  // Si no hay médicos nacionales, mostramos la tarjeta provisional
+  if (nacionalesBase.length === 0) {
+    return [
+      {
+        id: 'provisional-nac-1',
+        nombre: 'Especialista Nacional',
+        especialidad: 'Consultoría & Red de Especialistas Nacionales',
+        imagen: '', // Sin imagen para que genere el avatar de iniciales "EN"
+        esProvisional: true
+      }
+    ];
+  }
+
+  return nacionalesBase;
+});
 
   // 4. SECCIÓN: Asociados Internacionales (Avatar provisional hasta confirmar)
   medicosInternacionales = computed(() => {

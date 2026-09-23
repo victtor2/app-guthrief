@@ -11,7 +11,7 @@
 <div class="container py-5">
   <div class="row g-4">
     
-    <!-- Tarjeta 1: Cardiología / Ejemplo -->
+    <!-- Tarjeta 1: Cardiología -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card h-100 shadow-sm border-0 overflow-hidden">
         <img src="/images/cardiologia.jpg" class="card-img-top" alt="Cardiología" style="height: 220px; object-fit: cover;">
@@ -24,10 +24,10 @@
       </div>
     </div>
 
-    <!-- Tarjeta 2: Ejemplo -->
+    <!-- Tarjeta 2: Cirugía Cardiovascular -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card h-100 shadow-sm border-0 overflow-hidden">
-        <img src="/images/vascular.jpg" class="card-img-top" alt="Especialidad 2" style="height: 220px; object-fit: cover;">
+        <img src="/images/vascular.jpg" class="card-img-top" alt="Cirugía Cardiovascular" style="height: 220px; object-fit: cover;">
         <div class="card-body p-4 text-center">
           <h5 class="card-title fw-bold text-dark">Cirugía Cardiovascular</h5>
           <p class="card-text text-muted small">
@@ -37,10 +37,10 @@
       </div>
     </div>
 
-    <!-- Tarjeta 3: Ejemplo -->
+    <!-- Tarjeta 3: Nefrología -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card h-100 shadow-sm border-0 overflow-hidden">
-        <img src="/images/nefrologia.jpg" class="card-img-top" alt="Especialidad 3" style="height: 220px; object-fit: cover;">
+        <img src="/images/nefrologia.jpg" class="card-img-top" alt="Nefrología Especializada" style="height: 220px; object-fit: cover;">
         <div class="card-body p-4 text-center">
           <h5 class="card-title fw-bold text-dark">Nefrología Especializada</h5>
           <p class="card-text text-muted small">
@@ -53,21 +53,20 @@
   </div>
 </div>
 
-
 <div class="container py-5 my-3">
   <div class="row g-4">
     
+    <!-- Cardiología Clínica -> Mantiene su ruta individual -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'cardiologia']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <!-- Foto en el círculo -->
         <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
-            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+             style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
           <img src="/images/cardioclinica.jpg" 
-              alt="Cardiología Clínica" 
-              class="w-100 h-100" 
-              style="object-fit: cover;">
+               alt="Cardiología Clínica" 
+               class="w-100 h-100" 
+               style="object-fit: cover;">
         </div>
 
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cardiología Clínica</h3>
@@ -80,17 +79,17 @@
       </div>
     </div>
 
+    <!-- Hemodinamia -> Mantiene su ruta individual -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'hemodinamia']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <!-- Foto en el círculo -->
         <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
-            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+             style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
           <img src="/images/hemodinamia.jpg" 
-              alt="Hemodinamia" 
-              class="w-100 h-100" 
-              style="object-fit: cover;">
+               alt="Hemodinamia" 
+               class="w-100 h-100" 
+               style="object-fit: cover;">
         </div>
 
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Hemodinamia</h3>
@@ -103,17 +102,17 @@
       </div>
     </div>
 
+    <!-- Cirugía Vascular -> Mantiene su ruta individual -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'cirugia-vascular']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <!-- Foto en el círculo -->
         <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
-            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+             style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
           <img src="/images/piediabetico.jpeg" 
-              alt="Cirugía Vascular" 
-              class="w-100 h-100" 
-              style="object-fit: cover;">
+               alt="Cirugía Vascular" 
+               class="w-100 h-100" 
+               style="object-fit: cover;">
         </div>
 
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Cirugía Vascular</h3>
@@ -126,17 +125,17 @@
       </div>
     </div>
 
+    <!-- Nefrología -> ÚNICO CAMBIADO a /medicos -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
-           [routerLink]="['/especialidades', 'nefrologia']"
+           [routerLink]="['/medicos']"
            style="cursor: pointer; transition: all 0.3s ease;">
-        <!-- Foto en el círculo -->
         <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
-            style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
+             style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
           <img src="/images/nefro.png" 
-              alt="Nefrologia" 
-              class="w-100 h-100" 
-              style="object-fit: cover;">
+               alt="Nefrologia" 
+               class="w-100 h-100" 
+               style="object-fit: cover;">
         </div>
 
         <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Nefrología</h3>
@@ -144,7 +143,7 @@
           Protección y cuidado del sistema renal. Diagnóstico y tratamiento de la insuficiencia renal crónica, nefropatía diabética e hipertensiva y terapias de sustitución.
         </p>
         <div class="mt-auto">
-          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Especialistas →</span>
         </div>
       </div>
     </div>
