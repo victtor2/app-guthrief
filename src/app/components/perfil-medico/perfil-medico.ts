@@ -40,7 +40,7 @@ export class PerfilMedico implements OnInit{
         
         'Pregrado: ',
         'Doctora en Medicina y Cirugía - Universidad Central del Ecuador – Ecuador (2005)',
-        'Bachiller en Ciencias Médicas - Colegio Nacional 24 de Mayo – Ecuador (1996)'
+        'Bachiller en Ciencias Médicas - Colegio Experimental "24 de mayo" – Ecuador (1996)'
       ],
       experiencia: [
         'Magíster en Cardio-Hemato-Oncología; Sociedad Española de Imagen Cardíaca – España (2021 - 2022).',
@@ -91,7 +91,7 @@ export class PerfilMedico implements OnInit{
       
         'Pregrado: ',
         'Doctora en Medicina y Cirugía – Universidad Central del Ecuador',
-        'Bachiller en Química Biólogo – 24 de Mayo High School, Ecuador'
+        'Bachiller en Química Biólogo – Colegio Experimental "24 de mayo", Ecuador'
       ],
       experiencia: [
         '2° Congreso Internacional de Atención Primaria en Medicina.',
@@ -111,7 +111,7 @@ export class PerfilMedico implements OnInit{
 
         'dra_paulina': {
       nombre: 'Dra. Paulina Cisneros',
-      especialidad: 'Cardiología Clínica/Hmoinamia y Carioangiología Intrvnionista',
+      especialidad: 'Cardiología Clínica / Hemodinamia y Cardioangiología Intervencionista',
       subtitulo: 'Especialista en Investigación Clínica',
       imagen: 'images/paulina.png',
       resumen: 'Experta en el diagnóstico y manejo de enfermedades cardíacas como Cardiopatía Isquémica, Infarto Agudo, Hipertensión arterial e Hipertensión Pulmonar, Insuficiencia Cardíaca, arritmias y patologias vasculares periféricas. Acompaña a sus pacientes con un enfoque preventivo, promoviendo un corazón sano y una mejor calidad de vida.',
@@ -123,7 +123,7 @@ export class PerfilMedico implements OnInit{
         'Especialista en Investigación Clínica – Universidad Abierta Interamericana, Argentina (2025)',
         'Pregrado: ',
         'Doctor en Medicina – Universidad de La Habana, Cuba (2002)',
-        'Bachiller en Química Biólogo – 24 de Mayo High School, Ecuador (1997)'
+        'Bachiller en Química Biólogo – Colegio Experimental "24 de mayo", Ecuador (1997)'
       ],
       experiencia: [
         'Ha participado en múltiples cursos y congresos internacionales sobre Cardiología, Hemodinamia, Terapia endovascular y manejo de enfermedades cardiovasculares en países como Estados Unidos, Argentina, Brasil, México, Chile, España, Colombia entre otros.',
@@ -143,7 +143,7 @@ export class PerfilMedico implements OnInit{
       subtitulo: 'Especialista en nefrología diagnóstica, clínica, intervencionista y crítica.',
       imagen: 'images/harold.png',
       resumen: 'La nefrología clínica, diagnóstica e intervencionista se centra en prevenir, diagnosticar y tratar enfermedades renales, metabólicas y autoinmunes, usando tanto métodos médicos como intervenciones especializadas, incluyendo manejo de pacientes críticos y terapias de reemplazo renal.',
-      estudios: [
+      estudios: [ 
         'Postgrado: ',
         'Diplomado en Terapias de Reemplazo Renal en el Paciente Críticamente Enfermo - UNAM (2022)',
         'Maestría en Epidemiología y Salud Colectiva (egresado) – UASB (2022)',
