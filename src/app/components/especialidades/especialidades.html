@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<!-- Sección de Tarjetas de Servicios -->
+<!-- Sección Superior de Tarjetas -->
 <div class="container py-5">
   <div class="row g-4">
     
@@ -37,14 +37,14 @@
       </div>
     </div>
 
-    <!-- Tarjeta 3: Nefrología -->
+    <!-- Tarjeta 3: Nutrición y Dietética -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card h-100 shadow-sm border-0 overflow-hidden">
-        <img src="/images/nefrologia.jpg" class="card-img-top" alt="Nefrología Especializada" style="height: 220px; object-fit: cover;">
+        <img src="/images/nutri.jpg" class="card-img-top" alt="Nutrición y Dietética" style="height: 220px; object-fit: cover;">
         <div class="card-body p-4 text-center">
-          <h5 class="card-title fw-bold text-dark">Nefrología Especializada</h5>
+          <h5 class="card-title fw-bold text-dark">Nutrición y Dietética</h5>
           <p class="card-text text-muted small">
-            Evaluaciones médicas completas diseñadas para monitorear y cuidar tu salud de forma proactiva.
+            Evaluaciones nutricionales completas diseñadas para cuidar tu salud de forma proactiva.
           </p>
         </div>
       </div>
@@ -53,10 +53,11 @@
   </div>
 </div>
 
+<!-- Sección Inferior de Especialidades Interactivas -->
 <div class="container py-5 my-3">
   <div class="row g-4">
     
-    <!-- Cardiología Clínica -> Mantiene su ruta individual -->
+    <!-- Cardiología Clínica -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'cardiologia']"
@@ -79,7 +80,7 @@
       </div>
     </div>
 
-    <!-- Hemodinamia -> Mantiene su ruta individual -->
+    <!-- Hemodinamia -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'hemodinamia']"
@@ -102,7 +103,7 @@
       </div>
     </div>
 
-    <!-- Cirugía Vascular -> Mantiene su ruta individual -->
+    <!-- Cirugía Vascular -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
            [routerLink]="['/especialidades', 'cirugia-vascular']"
@@ -125,25 +126,25 @@
       </div>
     </div>
 
-    <!-- Nefrología -> ÚNICO CAMBIADO a /medicos -->
+    <!-- Nutrición (Reactivada con su propia ruta /especialidades/nutricion) -->
     <div class="col-lg-3 col-md-6">
       <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden p-4 text-center bg-white specialty-card"
-           [routerLink]="['/medicos']"
+           [routerLink]="['/especialidades', 'nutricion']"
            style="cursor: pointer; transition: all 0.3s ease;">
         <div class="icon-box rounded-circle shadow-sm mx-auto mb-4 overflow-hidden border border-2" 
              style="width: 120px; height: 120px; border-color: #19a5b5 !important;">
-          <img src="/images/nefro.png" 
-               alt="Nefrologia" 
+          <img src="/images/nutri.jpg" 
+               alt="Nutrición" 
                class="w-100 h-100" 
                style="object-fit: cover;">
         </div>
 
-        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Nefrología</h3>
+        <h3 class="fw-bold mb-3" style="color: #0b348f; font-size: 1.5rem;">Nutrición</h3>
         <p class="text-muted small mb-4">
-          Protección y cuidado del sistema renal. Diagnóstico y tratamiento de la insuficiencia renal crónica, nefropatía diabética e hipertensiva y terapias de sustitución.
+          Evaluación nutricional personalizada, planes de alimentación clínica, control metabólico y asesoría especializada para un estilo de vida saludable.
         </p>
         <div class="mt-auto">
-          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Especialistas →</span>
+          <span class="fw-bold small text-uppercase" style="color: #19a5b5; font-size: 0.75rem; letter-spacing: 0.5px;">Ver Detalle y Médicos →</span>
         </div>
       </div>
     </div>

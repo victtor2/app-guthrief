@@ -62,14 +62,14 @@ export class DetalleCardiologia implements OnInit {
         { nombre: 'Dra. Paulina Cisneros', cargo: 'Cardióloga Clínica/Hemodinamista', imagen: 'images/paulina.png' }
       ]
     },
-    'nefrologia': {
-      titulo: 'Nefrología Especializada',
-      subtitulo: 'Protección y cuidado integral de tu salud renal',
-      descripcion: 'El riñón y el corazón trabajan de la mano. Evaluamos y tratamos de manera sistémica afecciones como la insuficiencia renal, control integral de hipertensión arterial refractaria y nefropatía diabética.',
-      icono: '🧬',
-      procedimientos: ['Prevención y freno de Insuficiencia Renal', 'Manejo de Nefropatía Diabética e Hipertensiva', 'Tratamiento de Infecciones Urinarias Recurrentes', 'Coordinación de Terapias de Reemplazo Renal'],
+    'nutricion': {
+      titulo: 'Nutrición y Dietética',
+      subtitulo: 'Cuidado integral para tu salud nutricional',
+      descripcion: 'Ofrecemos evaluaciones nutricionales completas diseñadas para cuidar tu salud de forma proactiva, con planes de alimentación personalizados y seguimiento continuo.',
+      icono: '🥗',
+      procedimientos: ['Evaluación Nutricional Integral', 'Planificación de Alimentación Clínica', 'Control Metabólico', 'Asesoría Especializada para Estilo de Vida Saludable'],
       medicos: [
-        { nombre: 'Dr. Harold Álvarez', cargo: 'Nefrólogo Clínico', imagen: 'images/harold.png' }
+        { nombre: 'Dra. Samantha Cueller', cargo: 'Nutricionista Clínica', imagen: 'images/samantha.png' }
       ]
     }
   };
