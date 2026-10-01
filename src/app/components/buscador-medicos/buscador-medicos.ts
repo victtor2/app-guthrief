@@ -129,7 +129,7 @@ medicosNacionales = computed(() => {
     if (nombreLimpio.includes('karina')) return 'dra_karina';
     if (nombreLimpio.includes('fernanda')) return 'dra_fernanda';
     if (nombreLimpio.includes('paulina')) return 'dra_paulina';
-    if (nombreLimpio.includes('harold')) return 'dr_harold';
+    if (nombreLimpio.includes('samantha')) return 'dra_samantha';
     
     return 'dra_paulina';
   }

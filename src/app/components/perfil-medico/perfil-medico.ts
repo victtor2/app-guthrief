@@ -137,24 +137,20 @@ export class PerfilMedico implements OnInit{
       ]
     },
 
-        'dr_harold': {
-      nombre: 'Dra. Harold Álvarez',
-      especialidad: 'Nefrología',
-      subtitulo: 'Especialista en nefrología diagnóstica, clínica, intervencionista y crítica.',
-      imagen: 'images/harold.png',
-      resumen: 'La nefrología clínica, diagnóstica e intervencionista se centra en prevenir, diagnosticar y tratar enfermedades renales, metabólicas y autoinmunes, usando tanto métodos médicos como intervenciones especializadas, incluyendo manejo de pacientes críticos y terapias de reemplazo renal.',
+        'dra_samantha': {
+      nombre: 'Dra. Samantha Cueller',
+      especialidad: 'Nutrición y Dietética',
+      subtitulo: 'Especialista en nutrición clínica y dietética.',
+      imagen: 'images/samantha.png',
+      resumen: 'La nutrición clínica se centra en prevenir, diagnosticar y tratar trastornos nutricionales, usando tanto métodos médicos como intervenciones especializadas, incluyendo manejo de pacientes críticos y terapias de reemplazo nutricional.',
       estudios: [ 
         'Postgrado: ',
-        'Diplomado en Terapias de Reemplazo Renal en el Paciente Críticamente Enfermo - UNAM (2022)',
-        'Maestría en Epidemiología y Salud Colectiva (egresado) – UASB (2022)',
-        'Diplomatura Superior en Nefrología Clínica Ambulatoria – UNNA (2020)',
-        'Especialización en Nefrología – UCE (2019)',
-        'Diplomado en Hemodiálisis - ITSEM (2019)',
-        'MBA con mención en Gerencia de Calidad y Productividad – PUCE (2016)',
-        'Especialización en Gerencia de Salud – USFQ (2015)',
+        'Maestría en Nutrición Clínica - Universidad IBERO Puebla, México',
+        'Licenciatura en Nutrición y dietética – Pontificia Universidad Católica del Ecuador',
 
         'Pregrado: ',
-        'Doctor en Medicina y Cirugía – Pontificia Universidad Católica, Ecuador (2014)',
+        'Tecnología en Estética Integral y Cosmetología – Instituto LENDAN, Ecuador ',
+        'Bachiller en Ciencias – Colegio de América, Ecuador'
       ],
       experiencia: [
         'Ha participado en múltiples cursos y congresos internacionales.'
