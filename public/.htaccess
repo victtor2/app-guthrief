@@ -1,8 +1,42 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # 1. Forzar HTTPS siempre
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Forzar versión SIN "www" (evita duplicidad con www.cardiovasculargf.com)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # 3. Eliminar /index.html directo de la URL
+  RewriteCond %{THE_REQUEST} ^.*/index\.html
+  RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+  # 4. Servir archivos reales directamente (imágenes, css, js, sitemap.xml, robots.txt)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 5. Redirigir el resto al index.html (Angular SPA Router)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# 6. Compresión GZIP (acelera la carga para Googlebot y usuarios)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# 7. Cabeceras de caché del navegador
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresDefault "access plus 2 days"
 </IfModule>
